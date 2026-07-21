@@ -1,0 +1,65 @@
+using static System.Console;
+
+// Saída de Dados no Console
+
+Console.WriteLine("Hello, World!");
+Console.Write("SENAI ");
+Console.Write("SENAI");
+Console.Write("\tSENAI ");
+Console.Write("Cinema\nNovo ");
+Title = "Aplicativo SENAI";
+
+string escola = "Americana"; // Variável do tipo string
+WriteLine($"SENAI {escola}");
+
+BackgroundColor = ConsoleColor.Blue;    
+ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("Messi");
+
+ResetColor();
+Console.WriteLine("Neymar");
+
+double numero = 3.144214214; // Variável do tipo double
+
+WriteLine($"Número: {numero:n}");
+
+// Processamento de Dados
+// Operadores Aritméticos
+
+int a = 1 + 1; // Soma
+int b = 2 - 1; // Subtração
+int c = 3 * 2; // Multiplicação
+double d = 4 / 2; // Divisão
+double e = 2 * 2 * 2; // Potenciação
+Math.Pow(2, 3); // Potenciação usando Math.Pow
+double f = Math.Sqrt(169); // Raiz quadrada
+double k = 1 + (2 * 3) - (4 / 2);
+double j = 7 % 2; // Resto da divisão
+int y = 0;
+WriteLine(y);
+y++;
+WriteLine(y);
+y--;
+WriteLine(y);
+y += 5; // Soma e atribuição
+y -= 5; // Subtração e atribuição
+y *= 5; // Multiplicação e atribuição
+y /= 5; // Divisão e atribuição
+y %= 5; // Módulo e atribuição
+WriteLine(y);
+
+// Entrada de Dados
+Write("Digite seu nome: ");
+string nome = ReadLine(); // Entrada de Dados
+Write("Digite sua idade: ");
+int idade = int.Parse(ReadLine()); // Conversão de Dados
+Write("Digite seu salário: ");
+double salario = double.Parse(ReadLine());
+//Convert.ToInt32(ReadLine()); ---> Outra forma de conversão de dados
+WriteLine($"Nome: {nome}, Idade: {idade/2}, Salário: R$ {salario:n}");
+
+
+
+
+
+ReadKey();
