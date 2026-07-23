@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Atividade 01 - Estrutura sequencial de algoritmos/Atividade 01 - Estrutura sequencial de algoritmos.csproj" Id="435a273f-46a9-4fa2-8c5c-2e47a1e9fa23" />
+  <Project Path="Medidas/Medidas.csproj" Id="27062a23-742a-425c-a0af-8e1e84058d5a" />
   <Project Path="Operadores/Operadores.csproj" />
 </Solution>
