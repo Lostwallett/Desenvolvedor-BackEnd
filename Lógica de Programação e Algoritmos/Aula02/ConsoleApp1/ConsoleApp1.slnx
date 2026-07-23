@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ConsoleApp1/ConsoleApp1.csproj" />
   <Project Path="ExercicioRetangulo/ExercicioRetangulo.csproj" />
+  <Project Path="Exercícios Gerais 01/Exercícios Gerais 01.csproj" Id="cf565771-82a5-4416-9ced-a8c10779f4f9" />
 </Solution>

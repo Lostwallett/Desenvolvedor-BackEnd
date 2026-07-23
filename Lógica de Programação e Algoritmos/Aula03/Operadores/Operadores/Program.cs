@@ -60,9 +60,10 @@ WriteLine(x & y);
 WriteLine(x | y);
 WriteLine(x ^ y);
 WriteLine(x && y);
-WriteLine(x || y);
+
 WriteLine();
 
+WriteLine(x || y ? "Verdadeiro" : "Falso");
 
 
 
