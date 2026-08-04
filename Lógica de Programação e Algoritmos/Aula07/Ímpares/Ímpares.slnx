@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Colecao/Colecao.csproj" />
   <Project Path="Combustivel/Combustivel.csproj" />
   <Project Path="Divisao/Divisao.csproj" />
   <Project Path="FiatUnoTurismo/FiatUnoTurismo.csproj" />
