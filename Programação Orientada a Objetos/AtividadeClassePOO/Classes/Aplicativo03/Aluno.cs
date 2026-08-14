@@ -17,7 +17,7 @@
 
         public double NotaFinal()
         {
-            double notaFinal = (Nota1 / 30) + (Nota2 / 35) + (Nota3 / 35);
+            double notaFinal = Nota1 + Nota2  + Nota3;
             return notaFinal;
 
         }
@@ -36,7 +36,7 @@
         }
         public bool AprovadoOuReprovado()
         {
-            if (NotaFinal() < 60)
+            if (NotaFinal() > 60)
             {
                 return true;
             }
@@ -47,8 +47,8 @@
         }
         public void ExibirDados()
         {
-            Console.WriteLine($"Nota final do aluno: {NotaFinal()}\n" +
-                $"{(AprovadoOuReprovado() ? "Aprovado" : $"Reprovado, faltou {Ponto} pontos") }");
+            Console.WriteLine($"Nota final do aluno: {NotaFinal():f2}\n" +
+                $"{(AprovadoOuReprovado() ? "Aprovado" : $"Reprovado, faltou {Ponto()} pontos") }");
         }
     }
 }
