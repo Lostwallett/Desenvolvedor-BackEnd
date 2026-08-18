@@ -1,0 +1,69 @@
+﻿namespace Banco
+{
+    public class ContaBancaria
+    {
+        //1º - Campos
+        private string titular;
+        private int numero;
+        private double saldo;
+
+        //2º - Propriedades
+        protected string TitularDaConta
+        {
+            get { return titular; }
+            set { titular = value; }
+        }
+
+        protected int NumeroDaConta
+        {
+            get { return numero; }
+            private set { numero = value; }
+        }
+
+        protected double SaldoDaConta
+        {
+            get { return saldo; }
+            set { saldo = value; }
+        }
+
+        //3º - Construtor
+        public ContaBancaria(string titularDaConta, int numeroDaConta)
+        {
+            TitularDaConta = titularDaConta;
+            NumeroDaConta = numeroDaConta;
+            SaldoDaConta = 0;
+        }
+        public ContaBancaria(string titularDaConta, int numeroDaConta, double saldoDaConta)
+        {
+            TitularDaConta = titularDaConta;
+            NumeroDaConta = numeroDaConta;
+            SaldoDaConta = saldoDaConta;
+        }
+
+
+        //4º - Métodos
+        public void Deposito(double quantia)
+        {
+            SaldoDaConta += quantia;
+        }
+        public void Saque(double quantia)
+        {
+            if (quantia <= 0)
+            {
+                Console.WriteLine("Valor inválido. Insira valores positivos ou diferentes de zero. ");
+            }
+            else
+            {
+                SaldoDaConta -= quantia + 5.00;
+            }
+        }
+        public string ExibirDados()
+            {
+                return $"Dados da conta: \n" +
+                $"\tTitular da Conta: {TitularDaConta}\n" +
+                $"\tNúmero da Conta: {NumeroDaConta}\n" +
+                $"\tSaldo da Conta: {SaldoDaConta:c}\n";
+            }
+        
+    }
+}
