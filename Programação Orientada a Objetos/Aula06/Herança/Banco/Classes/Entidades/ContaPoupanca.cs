@@ -25,7 +25,12 @@
         //Métodos
         public override void Saque(double quantia)
         {
-            SaldoDaConta -= quantia + (quantia * TaxaDeJuros);
+            SaldoDaConta -= quantia;
+        }
+
+        public void AtualizacaoDeSaldo()
+        {
+            Console.WriteLine($"\tSaldo: {SaldoDaConta:c}");
         }
     }
 }

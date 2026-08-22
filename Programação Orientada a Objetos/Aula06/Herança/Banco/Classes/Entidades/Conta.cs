@@ -42,11 +42,18 @@ namespace Banco.Classes.Entidades
 		//Métodos
 		public virtual void Saque(double quantia)
 		{
-			SaldoDaConta -= quantia;
+			SaldoDaConta -= (quantia + 5);
 		}
 		public virtual void Deposito(double quantia)
 		{
 			SaldoDaConta += quantia;
-		}		
+		}
+		public void Dados()
+		{
+            Console.WriteLine($"Dados da conta:\n" +
+                $"\tTitular da conta: {TitularDaConta}\n" +
+                $"\tNúmero : {NumeroDaConta}\n" +
+                $"\tSaldo: {SaldoDaConta:c}\n");
+        }
     }
 }
