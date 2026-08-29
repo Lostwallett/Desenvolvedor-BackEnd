@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Abstracao/Abstracao.csproj" />
+  <Project Path="ZAbstracao/ZAbstracao.csproj" />
+</Solution>
