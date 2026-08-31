@@ -1,29 +1,38 @@
-﻿namespace ZAbstracao.Classes.Entidades
+﻿using ZAbstracao.Classes.Entidades;
+using ZAbstracao.Classes.Servicos;
+
+namespace ZAbstracao.Classes.Entidades
 {
     internal class Juridica : Pessoa
     {
         //Campos
-        private double numeroFuncionarios;
+        private int numeroFuncionarios;
 
         //Propriedades
-        protected double NumeroFuncionarios
+        protected int NumeroFuncionarios
         {
             get { return numeroFuncionarios; }
             set { numeroFuncionarios = value; }
         }
 
-        //Construtor
-        public Juridica(string nome, double rendaAnual, double numeroFuncionarios) : base(nome, rendaAnual)
+        //Construtores
+        public Juridica(string nome, double rendaAnual, int numeroFuncionarios) : base(nome, rendaAnual)
         {
             NumeroFuncionarios = numeroFuncionarios;
         }
+
         //Métodos
-        public void ExibirDados()
+        public override double CalcularImposto()
         {
-            Console.WriteLine($"Nome: {Nome}\n" +
+            Imposto imposto = new Imposto();
+            return imposto.CalcJuridica(RendaAnual, NumeroFuncionarios);
+        }
+        public override void ExibirDados()
+        {
+            Console.WriteLine($"Nome da Empresa: {Nome}\n" +
                 $"Renda Anual: {RendaAnual}\n" +
                 $"Número de Funcionários: {NumeroFuncionarios}\n" +
-                $"");
+                $"Imposto a pagar: {CalcularImposto():c}\n");
         }
     }
 }

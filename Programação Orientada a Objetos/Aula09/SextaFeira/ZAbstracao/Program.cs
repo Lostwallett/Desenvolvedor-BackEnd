@@ -1,30 +1,52 @@
 ﻿using ZAbstracao.Classes.Entidades;
-using ZAbstracao.Classes.Servicos;
+using ZAbstracao.Enumeracoes;
 
-Console.WriteLine("Você é pessoa física ou jurídica (F/J)? ");
-char escolha = char.Parse(Console.ReadLine()!.ToUpper());
+Console.Write("Digite o número de contribuintes: ");
+int n = int.Parse(Console.ReadLine()!);
 
-if (escolha.Equals('F'))
+List<Pessoa> pessoas = new List<Pessoa>();
+
+for (int i = 0; i < n; i++)
 {
-    Console.Write("Digite seu nome: ");
+    Console.Write("Digite '1' para pessoa física ou '2' para pessoa jurídica: ");
+    Contribuinte tipo = (Contribuinte)int.Parse(Console.ReadLine()!);
+
+    Console.Write("Digite seu nome ou o nome da sua empresa: ");
     string nome = Console.ReadLine()!;
-    Console.Write("Digite o valor da sua renda anual: ");
-    double rendaAnual = double.Parse(Console.ReadLine()!);
-    Console.Write("Teve gastos com a saúde? Se sim, digite o valor do gasto, caso contrário, digite 0: ");
-    double gastosSaude = double.Parse(Console.ReadLine()!);
 
-}
-else if (escolha.Equals('J'))
-{
-    Console.Write("Digite o nome da sua empresa: ");
-    string nome = Console.ReadLine()!;
-    Console.Write("Digite o valor da renda anual da sua empresa: ");
+    Console.Write("Digite a renda anual: ");
     double rendaAnual = double.Parse(Console.ReadLine()!);
-    Console.Write("Digite o número de funcionários da sua empresa: ");
-    double numeroFuncionarios = double.Parse(Console.ReadLine()!);
 
+    if (tipo == Contribuinte.Fisica)
+    {
+        Console.Write("Digite o valor dos gastos com saúde: ");
+        double gastosSaude = double.Parse(Console.ReadLine()!);
+
+        Pessoa pessoa = new Fisica(nome, rendaAnual, gastosSaude);
+
+        pessoas.Add(pessoa);
+    }
+    else if (tipo == Contribuinte.Juridica)
+    {
+        Console.Write("Digite o número de funcionários da sua empresa: ");
+        int numeroFuncionarios = int.Parse(Console.ReadLine()!);
+
+        Pessoa pessoa = new Juridica(nome, rendaAnual, numeroFuncionarios);
+
+        pessoas.Add(pessoa);
+    }
+    else
+    {
+        Console.WriteLine("Tipo de contribuinte inválido!");
+    }
 }
-else
+
+double totalImposto = 0;
+
+foreach (var pessoa in pessoas)
 {
-    Console.WriteLine("Objeto selecionado não está na lista!");
+    pessoa.ExibirDados();
+
+    totalImposto += pessoa.CalcularImposto();
 }
+Console.WriteLine($"Total de impostos arrecadados: {totalImposto:c}");

@@ -2,22 +2,22 @@
 
 namespace ZAbstracao.Classes.Entidades
 {
-    abstract internal class Pessoa : IAssinatura
+    internal abstract class Pessoa : IAssinatura
     {
         //Campos
         private string nome;
-        private double rendaanual;
+        private double rendaAnual;
 
         //Propriedades
-        public string Nome
+        protected string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
-        protected double RendaAnual
+        public double RendaAnual
         {
-            get { return rendaanual; }
-            set { rendaanual = value; }
+            get { return rendaAnual; }
+            set { rendaAnual = value; }
         }
 
         //Construtores
@@ -28,9 +28,7 @@ namespace ZAbstracao.Classes.Entidades
         }
 
         //Métodos
-        public void ExibirDados()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void ExibirDados();
+        public abstract double CalcularImposto();
     }
 }
