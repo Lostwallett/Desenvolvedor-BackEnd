@@ -30,7 +30,7 @@ while (continuar)
             break;
         case "3":
             //Sair
-            continuar = false;
+            continuar = false;  
             Console.WriteLine("Encerrando sistema ...");
             break;
 
@@ -121,17 +121,21 @@ void ConsultaDaConta(ContaContext conta)
                 //Operação Sacar
                 Console.WriteLine("Quanto você deseja sacar? ");
                 decimal valorsaque = decimal.Parse(Console.ReadLine()!);
-                contaConsultada.Depositar(valorsaque);
+                contaConsultada.Sacar(valorsaque);
                 conta.SaveChanges();
                 contaConsultada.ExibirDados();
                 break;
             case 3:
                 //Operação de alterar o titular da conta
+                Console.WriteLine("Digite o novo nome do titular da conta: ");
+                string novoTitular = Console.ReadLine()!;
+                contaConsultada.TitularDaConta = novoTitular;
+                conta.SaveChanges();
+                contaConsultada.ExibirDados();
                 break;
             case 4:
-                //Sair
-                continuar = false;
-                break;
+                //Voltar ao menu
+                return;
             default:
                 Console.WriteLine("Opção inválida!");
                 break;
