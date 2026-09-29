@@ -21,5 +21,23 @@ namespace SistemaERP.Telas
             //Botão de fechar a tela de registro, volta para a tela de login
             TelaLogin.AbrirTelaLogin();
         }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            TelaLogin.AbrirTelaLogin();
+        }
+
+        private void aprovaçãoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Aprovacao tela = new Aprovacao();
+            tela.Show();
+        }
     }
 }

@@ -44,9 +44,8 @@ namespace SistemaERP.Telas
             MessageBox.Show("Cadastro realizado com sucesso!");
 
             Hide();
-
-            Login login = new Login();
-            login.Show();
+                        
+            TelaLogin.AbrirTelaLogin();
         }
     }
 }

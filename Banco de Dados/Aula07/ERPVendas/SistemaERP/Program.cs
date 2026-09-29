@@ -1,4 +1,5 @@
 using SistemaERP.Classes.Contextos;
+using SistemaERP.Telas;
 
 namespace SistemaERP
 {
@@ -14,7 +15,7 @@ namespace SistemaERP
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            //Application.Run(new Login());             
+            Application.Run(new ERP());             
 
 
             //ContextoUltimoUsuario usuario = new ContextoUltimoUsuario();
@@ -26,7 +27,7 @@ namespace SistemaERP
              if (TestarConexaoBanco())
              {
                  MessageBox.Show("Conexão realizada com sucesso!");
-                 Application.Run(new Login());
+                 Application.Run(new ERP());
              }
              else
              {
