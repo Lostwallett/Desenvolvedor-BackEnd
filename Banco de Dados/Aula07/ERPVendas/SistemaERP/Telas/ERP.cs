@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace SistemaERP.Telas
 {
@@ -39,5 +40,27 @@ namespace SistemaERP.Telas
             Aprovacao tela = new Aprovacao();
             tela.Show();
         }
+
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregarRelatorio();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Não foi possível carregar o relatório: Erro -> {ex.Message}!");
+            }
+        }
+
+        private void CarregarRelatorio()
+        {
+            Hide();
+            RelatorioVendas relatorio = new RelatorioVendas();
+            relatorio.Show();
+
+        }
+        
     }
 }

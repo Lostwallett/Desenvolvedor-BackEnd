@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ERP));
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -46,6 +47,7 @@
             criarUsuárioToolStripMenuItem = new ToolStripMenuItem();
             excluirUsuárioToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
+            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -109,6 +111,7 @@
             relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
             relatórioDeVendasToolStripMenuItem.Size = new Size(243, 22);
             relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
+            relatórioDeVendasToolStripMenuItem.Click += relatórioDeVendasToolStripMenuItem_Click;
             // 
             // editarPedidoDeVendasToolStripMenuItem
             // 
@@ -162,11 +165,21 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(98, 96);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(585, 270);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // reportViewer1
+            // 
+            reportViewer1.Location = new Point(0, 0);
+            reportViewer1.Name = "ReportViewer";
+            reportViewer1.ServerReport.BearerToken = null;
+            reportViewer1.Size = new Size(396, 246);
+            reportViewer1.TabIndex = 0;
             // 
             // ERP
             // 
@@ -207,5 +220,6 @@
         private ToolStripMenuItem criarUsuárioToolStripMenuItem;
         private ToolStripMenuItem excluirUsuárioToolStripMenuItem;
         private PictureBox pictureBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

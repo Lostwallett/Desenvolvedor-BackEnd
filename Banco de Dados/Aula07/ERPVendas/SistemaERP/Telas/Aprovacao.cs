@@ -60,7 +60,7 @@ namespace SistemaERP.Telas
                 $"Senha = {senha}\n" +
                 $"Regra = {regra}");
 
-            var user = pessoa.Pessoas.FirstOrDefault();
+            var user = pessoa.Pessoas.FirstOrDefault(t => t.Status == 1);
             Usuario usuario = new Usuario(nome, senha, regra);
             novoUsuario.Add(usuario);
             novoUsuario.SaveChanges();
