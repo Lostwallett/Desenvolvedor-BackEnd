@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="APIPessoas/APIPessoas.csproj" />
+  <Project Path="ProdutoSENAI/ProdutoSENAI.csproj" />
+</Solution>
