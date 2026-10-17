@@ -1,4 +1,10 @@
+using APIPessoas.Models.Entidades;
+using APIPessoas.Models.Contextos;
+
 var builder = WebApplication.CreateBuilder(args);
+
+ProdutosContexto contexto = new ProdutosContexto();
+contexto.Database.EnsureCreated();
 
 // Add services to the container.
 
